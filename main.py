@@ -49,7 +49,6 @@ def read_page():
 
 
 def start_driver():
-    # Keep browser open so you can manually log out
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_experimental_option("detach", True)
 
@@ -77,8 +76,6 @@ def fill_form(driver, data):
         WebDriverWait(driver, 30).until(
             EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div[2]/div[1]/div/div[4]/a"))).click()
 
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     readed_data = read_page()
     driver = start_driver()
